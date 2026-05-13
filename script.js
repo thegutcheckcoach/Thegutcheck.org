@@ -1,0 +1,1 @@
+function enterSite(){document.getElementById("welcome").classList.add("hidden");document.getElementById("site").classList.remove("hidden");window.location.hash="home";window.scrollTo({top:0,behavior:"smooth"});}
