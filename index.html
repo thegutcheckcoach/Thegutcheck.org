@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <title>Gutcheck Coaching</title>
+  <meta name="description" content="Gutcheck Coaching - Nutrition, Training, Mindset." />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <main id="app" aria-live="polite">
+    <section class="page-shell" id="pageShell">
+      <div class="page-stage" id="pageStage">
+        <img id="pageImage" src="assets/home.png" alt="Gutcheck Coaching page" draggable="false" />
+        <div id="hotspots"></div>
+        <form id="contactForm" class="contact-overlay" aria-label="Contact form">
+          <input id="name" name="name" autocomplete="name" aria-label="Name" />
+          <input id="email" name="email" autocomplete="email" type="email" aria-label="Email" />
+          <textarea id="message" name="message" aria-label="Message"></textarea>
+          <button type="submit" aria-label="Send Message"></button>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <div class="mobile-controls" aria-label="Mobile site navigation">
+    <button data-go="home">Home</button>
+    <button data-go="about">About</button>
+    <button data-go="coaching">Coaching</button>
+    <button data-go="process">Process</button>
+    <button data-go="contact">Contact</button>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
