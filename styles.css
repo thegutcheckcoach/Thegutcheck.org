@@ -1,0 +1,20 @@
+* { box-sizing: border-box; }
+html, body { margin: 0; min-height: 100%; background: #f7f4ef; font-family: Arial, sans-serif; }
+body { overflow-x: hidden; }
+.page-shell { position: relative; width: min(100vw, 1536px); margin: 0 auto; line-height: 0; background: #fff; box-shadow: 0 0 30px rgba(0,0,0,.08); }
+#pageImage { width: 100%; height: auto; display: block; transition: opacity .28s ease, transform .28s ease; user-select: none; }
+#pageImage.changing { opacity: 0; transform: scale(.992); }
+.hotspot { position: absolute; display: block; border: 0; background: transparent; cursor: pointer; z-index: 4; padding: 0; }
+.hotspot:focus-visible { outline: 3px solid #d00000; outline-offset: 2px; background: rgba(208,0,0,.08); }
+.contact-overlay { display: none; position: absolute; inset: 0; z-index: 3; line-height: normal; }
+body[data-page="contact"] .contact-overlay { display: block; }
+.contact-overlay input, .contact-overlay textarea { position: absolute; border: 0; background: transparent; padding: 0 1.2%; font-size: clamp(11px, 1.6vw, 24px); color: #111; outline: none; font-family: Arial, sans-serif; }
+.contact-overlay textarea { resize: none; padding-top: 1%; }
+.contact-overlay button { position: absolute; border: 0; background: transparent; cursor: pointer; }
+#name { left: 53.6%; top: 17.8%; width: 37.7%; height: 5.9%; }
+#email { left: 53.6%; top: 29.3%; width: 37.7%; height: 5.8%; }
+#message { left: 53.6%; top: 40.1%; width: 37.7%; height: 21.8%; }
+.contact-overlay button { left: 53.5%; top: 64.5%; width: 37.8%; height: 6%; }
+.mobile-controls { display: none; position: fixed; left: 0; right: 0; bottom: 0; z-index: 10; background: rgba(255,255,255,.94); border-top: 1px solid rgba(0,0,0,.12); padding: 8px; gap: 6px; justify-content: center; flex-wrap: wrap; }
+.mobile-controls button { border: 1px solid #c90000; background: #fff; color: #111; border-radius: 8px; padding: 8px 10px; font-weight: 700; font-size: 12px; }
+@media (max-width: 700px) { body { padding-bottom: 55px; } .mobile-controls { display: flex; } .page-shell { width: 100vw; box-shadow: none; } }
