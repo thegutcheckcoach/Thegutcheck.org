@@ -1,0 +1,634 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Gutcheck Coaching</title>
+<style>
+:root{
+  --red:#c90000;
+  --black:#070707;
+  --white:#ffffff;
+  --cream:#f8f4ef;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{
+  font-family:Arial,Helvetica,sans-serif;
+  background:#050505;
+  color:#111;
+  overflow-x:hidden;
+}
+body.locked{overflow:hidden}
+
+/* Interactive fixed top menu */
+.site-header{
+  position:fixed;
+  top:0;left:0;right:0;
+  height:82px;
+  z-index:1000;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  padding:0 clamp(16px,4vw,72px);
+  background:rgba(255,255,255,.94);
+  backdrop-filter:blur(14px);
+  border-bottom:2px solid rgba(201,0,0,.18);
+  box-shadow:0 14px 44px rgba(0,0,0,.12);
+}
+.logo{
+  text-decoration:none;
+  color:#111;
+  font-size:clamp(1.2rem,2.2vw,2rem);
+  font-weight:950;
+  letter-spacing:-1px;
+  line-height:.9;
+}
+.logo span{color:var(--red)}
+.logo small{
+  display:block;
+  font-size:.42em;
+  letter-spacing:.44em;
+  margin-top:6px;
+  margin-left:3px;
+}
+.menu{
+  display:flex;
+  align-items:center;
+  gap:clamp(10px,1.9vw,28px);
+}
+.menu a{
+  color:#111;
+  text-decoration:none;
+  text-transform:uppercase;
+  font-size:.78rem;
+  font-weight:950;
+  position:relative;
+  padding:12px 0;
+}
+.menu a::after{
+  content:"";
+  position:absolute;
+  left:0;right:0;bottom:4px;
+  height:3px;
+  background:var(--red);
+  transform:scaleX(0);
+  transform-origin:left;
+  transition:.25s;
+}
+.menu a:hover::after,.menu a.active::after{transform:scaleX(1)}
+.menu .talk{
+  background:var(--red);
+  color:#fff;
+  padding:14px 23px;
+  border-radius:7px;
+  box-shadow:0 14px 28px rgba(201,0,0,.28);
+}
+.menu .talk::after{display:none}
+.hamburger{
+  display:none;
+  border:0;
+  background:transparent;
+  color:var(--red);
+  font-size:2rem;
+  font-weight:950;
+  cursor:pointer;
+}
+
+/* Scroll progress */
+.progress{
+  position:fixed;
+  top:82px;
+  left:0;
+  height:4px;
+  width:0%;
+  background:var(--red);
+  z-index:1001;
+  box-shadow:0 0 14px rgba(201,0,0,.55);
+}
+
+/* Side dot navigation */
+.side-nav{
+  position:fixed;
+  right:24px;
+  top:50%;
+  transform:translateY(-50%);
+  z-index:900;
+  display:flex;
+  flex-direction:column;
+  gap:11px;
+}
+.side-nav button{
+  width:13px;
+  height:13px;
+  border-radius:50%;
+  border:2px solid var(--red);
+  background:#fff;
+  cursor:pointer;
+  transition:.25s;
+}
+.side-nav button.active{
+  background:var(--red);
+  transform:scale(1.35);
+}
+
+/* Full-screen section flow */
+main{scroll-snap-type:y proximity}
+.section{
+  min-height:100vh;
+  display:grid;
+  place-items:center;
+  padding:112px clamp(14px,4vw,72px) 56px;
+  scroll-snap-align:start;
+  position:relative;
+  overflow:hidden;
+}
+.section::before{
+  content:"";
+  position:absolute;
+  inset:0;
+  background:
+    radial-gradient(circle at 14% 16%, rgba(201,0,0,.08), transparent 30%),
+    radial-gradient(circle at 88% 20%, rgba(255,255,255,.20), transparent 26%),
+    linear-gradient(135deg,#fff,#f7f1e9);
+  z-index:0;
+}
+#landing::before{
+  background:
+    radial-gradient(circle at 18% 12%, rgba(201,0,0,.10), transparent 30%),
+    linear-gradient(135deg,#fff 0%,#f7f1e9 45%,#151515 45%,#020202 100%);
+}
+.wrap{
+  width:min(1365px,96vw);
+  position:relative;
+  z-index:1;
+}
+.label{
+  margin-bottom:18px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:14px;
+  color:rgba(0,0,0,.62);
+  text-transform:uppercase;
+  letter-spacing:.16em;
+  font-weight:950;
+  font-size:.76rem;
+}
+.label strong{color:var(--red)}
+#landing .label{color:rgba(255,255,255,.78)}
+#landing .label span:first-child{color:rgba(0,0,0,.65)}
+
+.page-frame{
+  width:min(1365px,96vw);
+  background:#fff;
+  border:5px solid #111;
+  outline:4px solid var(--red);
+  outline-offset:-16px;
+  overflow:hidden;
+  box-shadow:0 25px 90px rgba(0,0,0,.22);
+  display:grid;
+  place-items:center;
+  opacity:0;
+  transform:translateY(34px) scale(.985);
+  transition:opacity .85s ease,transform .85s ease,box-shadow .25s ease;
+  position:relative;
+}
+.page-frame.visible,#landing .page-frame{
+  opacity:1;
+  transform:translateY(0) scale(1);
+}
+.page-frame:hover{
+  transform:translateY(-4px) scale(1.004);
+  box-shadow:0 34px 100px rgba(201,0,0,.23);
+}
+.page-frame img{
+  width:100%;
+  height:auto;
+  display:block;
+  cursor:zoom-in;
+  user-select:none;
+}
+
+/* Transparent button/link zones layered over the images */
+.hotspot-layer{position:absolute;inset:0;z-index:4;pointer-events:none}
+.hotspot{
+  position:absolute;
+  display:block;
+  pointer-events:auto;
+  border-radius:8px;
+  background:rgba(201,0,0,0);
+  transition:.2s;
+}
+.hotspot:hover{
+  background:rgba(201,0,0,.10);
+  box-shadow:inset 0 0 0 2px rgba(201,0,0,.45);
+}
+
+/* Visible entry buttons */
+.entry-actions{
+  margin-top:22px;
+  display:flex;
+  justify-content:center;
+  gap:14px;
+  flex-wrap:wrap;
+}
+.action-btn{
+  min-width:184px;
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  padding:15px 24px;
+  border:2px solid #111;
+  border-radius:7px;
+  text-decoration:none;
+  background:#fff;
+  color:#111;
+  text-transform:uppercase;
+  font-weight:950;
+  transition:.25s;
+}
+.action-btn.primary{
+  background:var(--red);
+  border-color:var(--red);
+  color:#fff;
+  box-shadow:0 14px 28px rgba(201,0,0,.28);
+}
+.action-btn:hover{
+  transform:translateY(-3px);
+  box-shadow:0 14px 28px rgba(0,0,0,.18);
+}
+
+/* Lightbox */
+.lightbox{
+  position:fixed;
+  inset:0;
+  display:none;
+  place-items:center;
+  z-index:3000;
+  background:rgba(0,0,0,.92);
+  padding:30px;
+}
+.lightbox.open{display:grid}
+.lightbox img{
+  max-width:96vw;
+  max-height:90vh;
+  object-fit:contain;
+  background:#fff;
+  border:4px solid #fff;
+  box-shadow:0 25px 100px rgba(0,0,0,.75);
+}
+.close-lightbox{
+  position:fixed;
+  top:18px;
+  right:28px;
+  color:#fff;
+  font-size:50px;
+  line-height:1;
+  cursor:pointer;
+}
+
+/* Message modal */
+.message-modal{
+  position:fixed;
+  inset:0;
+  display:none;
+  place-items:center;
+  z-index:3200;
+  background:rgba(0,0,0,.84);
+  padding:24px;
+}
+.message-modal.open{display:grid}
+.message-card{
+  width:min(620px,94vw);
+  background:#fff;
+  border:4px solid #111;
+  outline:3px solid var(--red);
+  outline-offset:-12px;
+  padding:32px;
+  box-shadow:0 25px 100px rgba(0,0,0,.55);
+}
+.message-card h2{
+  font-size:clamp(1.8rem,4vw,3rem);
+  text-transform:uppercase;
+  line-height:1;
+  margin-bottom:10px;
+}
+.message-card h2 span{color:var(--red)}
+.message-card p{margin-bottom:18px;line-height:1.45}
+.message-card form{display:grid;gap:13px}
+.message-card input,.message-card textarea{
+  width:100%;
+  border:1px solid #ccc;
+  border-radius:6px;
+  padding:14px;
+  font:inherit;
+}
+.message-card textarea{min-height:130px;resize:vertical}
+.message-card button{
+  border:0;
+  border-radius:6px;
+  padding:15px;
+  font-weight:950;
+  text-transform:uppercase;
+  cursor:pointer;
+}
+.modal-actions{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.close-modal{background:#111;color:#fff}
+.send-btn{background:var(--red);color:#fff}
+
+footer{
+  padding:34px 16px;
+  text-align:center;
+  color:white;
+  background:#111;
+  font-weight:900;
+  letter-spacing:.08em;
+}
+footer span{color:var(--red)}
+
+@media(max-width:900px){
+  .hamburger{display:block}
+  .menu{
+    position:fixed;
+    top:82px;
+    left:0;right:0;
+    flex-direction:column;
+    align-items:stretch;
+    background:white;
+    padding:18px 22px 24px;
+    border-bottom:3px solid var(--red);
+    transform:translateY(-130%);
+    transition:.25s;
+    box-shadow:0 20px 50px rgba(0,0,0,.15);
+  }
+  .menu.open{transform:translateY(0)}
+  .menu a{text-align:center;padding:15px}
+  .side-nav{display:none}
+  .section{padding-top:104px}
+  .label{flex-direction:column;align-items:flex-start;gap:5px}
+  .page-frame{
+    border-width:3px;
+    outline-width:3px;
+    outline-offset:-10px;
+  }
+}
+</style>
+</head>
+
+<body>
+<header class="site-header">
+  <a href="#landing" class="logo"><span>GUT</span>CHECK<small>COACHING</small></a>
+  <button class="hamburger" aria-label="Open menu">☰</button>
+  <nav class="menu">
+    <a href="#landing">Landing</a>
+    <a href="#home">Home</a>
+    <a href="#about">About Me</a>
+    <a href="#coaching">Coaching</a>
+    <a href="#process">Process</a>
+    <a href="#contact">Contact</a>
+    <a href="#contact" class="talk">Let's Talk</a>
+  </nav>
+</header>
+
+<div class="progress"></div>
+
+<nav class="side-nav" aria-label="Page navigation">
+  <button data-target="landing" aria-label="Landing"></button>
+  <button data-target="home" aria-label="Home"></button>
+  <button data-target="about" aria-label="About Me"></button>
+  <button data-target="coaching" aria-label="Coaching"></button>
+  <button data-target="process" aria-label="Process"></button>
+  <button data-target="contact" aria-label="Contact"></button>
+</nav>
+
+<main>
+  <section id="landing" class="section">
+    <div class="wrap">
+      <div class="label"><span>01 / Landing</span><strong>Enter The Full Website</strong></div>
+      <div class="page-frame visible">
+        <img src="assets/01-landing.png" alt="Landing page">
+        <div class="hotspot-layer">
+          <a class="hotspot" href="#home" aria-label="Click here to enter website" style="left:72%;top:84%;width:19%;height:8%;"></a>
+          <a class="hotspot" href="https://www.instagram.com/the_gut_check" target="_blank" rel="noopener" aria-label="Open Instagram" style="left:21%;top:92%;width:18%;height:5%;"></a>
+          <a class="hotspot" href="#home" aria-label="Home menu" style="left:36%;top:3%;width:7%;height:5%;"></a>
+          <a class="hotspot" href="#about" aria-label="About menu" style="left:43%;top:3%;width:8%;height:5%;"></a>
+          <a class="hotspot" href="#coaching" aria-label="Coaching menu" style="left:52%;top:3%;width:9%;height:5%;"></a>
+          <a class="hotspot" href="#process" aria-label="Process menu" style="left:61%;top:3%;width:9%;height:5%;"></a>
+          <a class="hotspot" href="#contact" aria-label="Contact menu" style="left:78%;top:3%;width:8%;height:5%;"></a>
+          <a class="hotspot" href="#contact" aria-label="Let's talk" style="left:88%;top:2%;width:10%;height:6%;"></a>
+        </div>
+      </div>
+      <div class="entry-actions">
+        <a class="action-btn primary" href="#home">Enter Full Website</a>
+        <a class="action-btn" href="#contact">Let's Talk</a>
+      </div>
+    </div>
+  </section>
+
+  <section id="home" class="section">
+    <div class="wrap">
+      <div class="label"><span>02 / Home</span><strong>Better Health. Better You.</strong></div>
+      <div class="page-frame">
+        <img src="assets/02-home.png" alt="Home page">
+        <div class="hotspot-layer">
+          <a class="hotspot" href="#contact" aria-label="Work with me" style="left:6%;top:53%;width:13%;height:6%;"></a>
+          <a class="hotspot" href="#contact" aria-label="Let's talk" style="left:21%;top:53%;width:12%;height:6%;"></a>
+          <a class="hotspot" href="#home" style="left:31%;top:3%;width:7%;height:5%;"></a>
+          <a class="hotspot" href="#about" style="left:38%;top:3%;width:8%;height:5%;"></a>
+          <a class="hotspot" href="#coaching" style="left:47%;top:3%;width:9%;height:5%;"></a>
+          <a class="hotspot" href="#process" style="left:56%;top:3%;width:9%;height:5%;"></a>
+          <a class="hotspot" href="#contact" style="left:71%;top:3%;width:9%;height:5%;"></a>
+          <a class="hotspot" href="#contact" style="left:87%;top:2%;width:10%;height:6%;"></a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="about" class="section">
+    <div class="wrap">
+      <div class="label"><span>03 / About Me</span><strong>Coach Antonio</strong></div>
+      <div class="page-frame">
+        <img src="assets/03-about-me.png" alt="About me page">
+        <div class="hotspot-layer">
+          <a class="hotspot" href="#contact" aria-label="More about my story" style="left:4%;top:63%;width:16%;height:6%;"></a>
+          <a class="hotspot" href="#home" style="left:32%;top:3%;width:7%;height:5%;"></a>
+          <a class="hotspot" href="#about" style="left:40%;top:3%;width:8%;height:5%;"></a>
+          <a class="hotspot" href="#coaching" style="left:48%;top:3%;width:9%;height:5%;"></a>
+          <a class="hotspot" href="#process" style="left:57%;top:3%;width:9%;height:5%;"></a>
+          <a class="hotspot" href="#contact" style="left:73%;top:3%;width:9%;height:5%;"></a>
+          <a class="hotspot" href="#contact" style="left:89%;top:2%;width:10%;height:6%;"></a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="coaching" class="section">
+    <div class="wrap">
+      <div class="label"><span>04 / Coaching</span><strong>Nutrition • Fitness • Accountability</strong></div>
+      <div class="page-frame">
+        <img src="assets/04-coaching.png" alt="Coaching page">
+        <div class="hotspot-layer">
+          <a class="hotspot" href="#contact" aria-label="Ready to start your journey" style="left:27%;top:73%;width:46%;height:6%;"></a>
+          <a class="hotspot" href="#home" style="left:27%;top:3%;width:7%;height:5%;"></a>
+          <a class="hotspot" href="#about" style="left:34%;top:3%;width:8%;height:5%;"></a>
+          <a class="hotspot" href="#coaching" style="left:42%;top:3%;width:10%;height:5%;"></a>
+          <a class="hotspot" href="#process" style="left:54%;top:3%;width:9%;height:5%;"></a>
+          <a class="hotspot" href="#contact" style="left:72%;top:3%;width:9%;height:5%;"></a>
+          <a class="hotspot" href="#contact" style="left:88%;top:2%;width:10%;height:6%;"></a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="process" class="section">
+    <div class="wrap">
+      <div class="label"><span>05 / Process</span><strong>Small Steps. Big Changes.</strong></div>
+      <div class="page-frame">
+        <img src="assets/05-process.png" alt="Process page">
+        <div class="hotspot-layer">
+          <a class="hotspot" href="#home" style="left:27%;top:3%;width:7%;height:5%;"></a>
+          <a class="hotspot" href="#about" style="left:34%;top:3%;width:8%;height:5%;"></a>
+          <a class="hotspot" href="#coaching" style="left:43%;top:3%;width:10%;height:5%;"></a>
+          <a class="hotspot" href="#process" style="left:54%;top:3%;width:9%;height:5%;"></a>
+          <a class="hotspot" href="#contact" style="left:72%;top:3%;width:9%;height:5%;"></a>
+          <a class="hotspot" href="#contact" style="left:88%;top:2%;width:10%;height:6%;"></a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact" class="section">
+    <div class="wrap">
+      <div class="label"><span>06 / Contact</span><strong>Start Your Journey</strong></div>
+      <div class="page-frame">
+        <img src="assets/06-contact.png" alt="Contact page">
+        <div class="hotspot-layer">
+          <a class="hotspot" href="#home" style="left:25%;top:3%;width:7%;height:5%;"></a>
+          <a class="hotspot" href="#about" style="left:32%;top:3%;width:8%;height:5%;"></a>
+          <a class="hotspot" href="#coaching" style="left:41%;top:3%;width:10%;height:5%;"></a>
+          <a class="hotspot" href="#process" style="left:51%;top:3%;width:9%;height:5%;"></a>
+          <a class="hotspot" href="#contact" style="left:69%;top:3%;width:9%;height:5%;"></a>
+          <a class="hotspot" href="#contact" style="left:85%;top:2%;width:10%;height:6%;"></a>
+          <a class="hotspot" href="mailto:thegutcheckcoaching@gmail.com" aria-label="Email Gutcheck Coaching" style="left:12%;top:50%;width:29%;height:5%;"></a>
+          <a class="hotspot" href="tel:+13606106877" aria-label="Call Gutcheck Coaching" style="left:12%;top:59%;width:20%;height:5%;"></a>
+          <a class="hotspot" href="https://www.instagram.com/the_gut_check" target="_blank" rel="noopener" aria-label="Open Instagram" style="left:12%;top:67%;width:18%;height:5%;"></a>
+          <button class="hotspot open-message" aria-label="Open message form" style="left:54%;top:68%;width:37%;height:7%;border:0;cursor:pointer;"></button>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<div class="lightbox" aria-hidden="true">
+  <span class="close-lightbox">&times;</span>
+  <img src="" alt="Expanded page preview">
+</div>
+
+<div class="message-modal" aria-hidden="true">
+  <div class="message-card">
+    <h2>Send A <span>Message</span></h2>
+    <p>This opens the visitor’s email app with their message ready to send to Gutcheck Coaching.</p>
+    <form id="messageForm">
+      <input id="visitorName" type="text" placeholder="Your Name" required>
+      <input id="visitorEmail" type="email" placeholder="Your Email" required>
+      <textarea id="visitorMessage" placeholder="Tell me about your goals..." required></textarea>
+      <div class="modal-actions">
+        <button class="close-modal" type="button">Close</button>
+        <button class="send-btn" type="submit">Send Message</button>
+      </div>
+    </form>
+  </div>
+</div>
+
+<footer>GUTCHECK <span>COACHING</span> — NUTRITION. TRAINING. MINDSET.</footer>
+
+<script>
+const menu=document.querySelector('.menu');
+const hamburger=document.querySelector('.hamburger');
+const progress=document.querySelector('.progress');
+const links=[...document.querySelectorAll('.menu a')];
+const dots=[...document.querySelectorAll('.side-nav button')];
+const sections=[...document.querySelectorAll('section[id]')];
+const frames=[...document.querySelectorAll('.page-frame')];
+
+hamburger.addEventListener('click',()=>menu.classList.toggle('open'));
+links.forEach(link=>link.addEventListener('click',()=>menu.classList.remove('open')));
+
+function updateProgress(){
+  const doc=document.documentElement;
+  const max=doc.scrollHeight-doc.clientHeight;
+  progress.style.width=`${(doc.scrollTop/max)*100}%`;
+}
+window.addEventListener('scroll',updateProgress);
+updateProgress();
+
+const revealObserver=new IntersectionObserver(entries=>{
+  entries.forEach(entry=>{
+    if(entry.isIntersecting) entry.target.classList.add('visible');
+  });
+},{threshold:.18});
+frames.forEach(frame=>revealObserver.observe(frame));
+
+const activeObserver=new IntersectionObserver(entries=>{
+  entries.forEach(entry=>{
+    if(entry.isIntersecting){
+      const id=entry.target.id;
+      links.forEach(link=>link.classList.toggle('active',link.getAttribute('href')===`#${id}`));
+      dots.forEach(dot=>dot.classList.toggle('active',dot.dataset.target===id));
+    }
+  });
+},{threshold:.54});
+sections.forEach(section=>activeObserver.observe(section));
+
+dots.forEach(dot=>{
+  dot.addEventListener('click',()=>document.getElementById(dot.dataset.target).scrollIntoView({behavior:'smooth'}));
+});
+
+/* click page images to zoom unless clicking a button/link overlay */
+const lightbox=document.querySelector('.lightbox');
+const lightboxImg=lightbox.querySelector('img');
+document.querySelectorAll('.page-frame img').forEach(img=>{
+  img.addEventListener('click',()=>{
+    lightboxImg.src=img.src;
+    lightbox.classList.add('open');
+    document.body.classList.add('locked');
+  });
+});
+function closeLightbox(){
+  lightbox.classList.remove('open');
+  document.body.classList.remove('locked');
+}
+document.querySelector('.close-lightbox').addEventListener('click',closeLightbox);
+lightbox.addEventListener('click',e=>{if(e.target===lightbox)closeLightbox();});
+document.querySelectorAll('.hotspot').forEach(h=>h.addEventListener('click',e=>e.stopPropagation()));
+
+/* contact message modal */
+const messageModal=document.querySelector('.message-modal');
+document.querySelectorAll('.open-message').forEach(btn=>{
+  btn.addEventListener('click',e=>{
+    e.stopPropagation();
+    messageModal.classList.add('open');
+    document.body.classList.add('locked');
+  });
+});
+document.querySelector('.close-modal').addEventListener('click',()=>{
+  messageModal.classList.remove('open');
+  document.body.classList.remove('locked');
+});
+messageModal.addEventListener('click',e=>{
+  if(e.target===messageModal){
+    messageModal.classList.remove('open');
+    document.body.classList.remove('locked');
+  }
+});
+document.getElementById('messageForm').addEventListener('submit',e=>{
+  e.preventDefault();
+  const name=encodeURIComponent(document.getElementById('visitorName').value);
+  const email=encodeURIComponent(document.getElementById('visitorEmail').value);
+  const message=encodeURIComponent(document.getElementById('visitorMessage').value);
+  window.location.href=`mailto:thegutcheckcoaching@gmail.com?subject=Gutcheck%20Coaching%20Inquiry&body=Name:%20${name}%0AEmail:%20${email}%0A%0AMessage:%0A${message}`;
+});
+</script>
+</body>
+</html>
