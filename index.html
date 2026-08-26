@@ -1,0 +1,634 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Gut Check Coaching | Personal Trainer &amp; Nutrition Coach – Skagit County, WA</title>
+<meta name="description" content="Gut Check Coaching — 1-on-1 hybrid personal training and nutrition coaching for busy adults in Sedro-Woolley, Mount Vernon, Burlington, Anacortes, Bellingham, and online. NASM certified PT, NCI nutrition coach.">
+<meta name="keywords" content="personal trainer Sedro-Woolley, personal trainer Mount Vernon WA, personal trainer Burlington WA, fitness coach Skagit County, nutrition coach Bellingham, online personal trainer Washington, in-home personal trainer Skagit County, hybrid training, NASM certified, NCI nutrition coach">
+<meta name="author" content="Coach Antonio – Gut Check Coaching">
+<meta name="robots" content="index,follow">
+<link rel="canonical" href="https://thegutcheck.org/">
+<meta property="og:title" content="Gut Check Coaching | Lose Weight &amp; Get Stronger">
+<meta property="og:description" content="1-on-1 hybrid personal training &amp; nutrition coaching. Online or in person. Skagit County, WA &amp; beyond.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://thegutcheck.org/">
+<meta property="og:image" content="https://thegutcheck.org/images/coach-antonio.jpg">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "LocalBusiness",
+  "name": "Gut Check Coaching",
+  "description": "1-on-1 hybrid personal training and nutrition coaching — online or in person.",
+  "url": "https://thegutcheck.org",
+  "email": "thegutcheckcoaching@gmail.com",
+  "telephone": "+1-360-610-6877",
+  "address": {"@type": "PostalAddress","addressLocality": "Sedro-Woolley","addressRegion": "WA","addressCountry": "US"},
+  "areaServed": ["Sedro-Woolley","Mount Vernon","Burlington","Anacortes","Bellingham","Skagit County","Whatcom County"],
+  "founder": {"@type": "Person","name": "Coach Antonio"}
+}
+</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#111214; --panel:#1a1c1f; --panel-2:#202327; --line:#2e3238;
+  --orange:#FF6B00; --orange-dim:#c85400;
+  --text:#f2f2f2; --muted:#a7adb5; --ok:#3ddc84;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:'Poppins',system-ui,sans-serif;background:var(--bg);color:var(--text);line-height:1.6}
+img{max-width:100%;display:block}
+a{color:var(--text)}
+h1,h2,.display{font-family:'Anton',sans-serif;letter-spacing:.5px;text-transform:uppercase;line-height:1.12;font-weight:400}
+section{padding:72px 0}
+.wrap{max-width:1080px;margin:0 auto;padding:0 20px}
+.eyebrow{color:var(--muted);font-size:12.5px;font-weight:700;letter-spacing:2.5px;text-transform:uppercase;margin-bottom:10px}
+h2{font-size:clamp(28px,4.5vw,42px);margin-bottom:14px}
+.sub{color:var(--muted);max-width:640px;font-size:15.5px}
+.btn{display:inline-block;background:var(--orange);color:#111;font-family:'Anton',sans-serif;text-transform:uppercase;letter-spacing:1px;font-size:15px;padding:14px 26px;border-radius:10px;text-decoration:none;transition:.15s;border:2px solid var(--orange)}
+.btn:hover{background:var(--orange-dim);border-color:var(--orange-dim);color:#fff}
+.btn.ghost{background:transparent;color:var(--text)}
+.btn.ghost:hover{background:rgba(255,107,0,.12);color:var(--text)}
+.card{background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:26px}
+
+/* Nav */
+nav{position:sticky;top:0;z-index:50;background:rgba(17,18,20,.94);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+.nav-in{max-width:1080px;margin:0 auto;padding:14px 20px;display:flex;align-items:center;justify-content:space-between;gap:16px}
+.logo{display:flex;align-items:center;gap:10px;text-decoration:none;color:var(--text)}
+.logo img{height:34px;width:auto}
+.logo b{font-family:'Anton',sans-serif;font-size:19px;letter-spacing:.5px}
+.logo b span{color:var(--orange)}
+.links{display:flex;gap:22px;font-size:13.5px;font-weight:600}
+.links a{color:var(--muted);text-decoration:none}
+.links a:hover,.links a.cta{color:var(--text)}
+.menu-btn{display:none;background:none;border:1px solid var(--line);color:var(--text);border-radius:8px;padding:7px 11px;font-size:18px;cursor:pointer}
+@media(max-width:840px){
+  .links{display:none;position:absolute;top:100%;left:0;right:0;background:var(--panel);border-bottom:1px solid var(--line);flex-direction:column;padding:18px 22px;gap:16px}
+  .links.open{display:flex}
+  .menu-btn{display:block}
+}
+
+/* Hero */
+.hero{padding:88px 0 64px;background:radial-gradient(ellipse 70% 55% at 50% -5%, rgba(255,107,0,.14), transparent 60%)}
+.hero .loc{color:var(--muted);font-size:13px;letter-spacing:2px;text-transform:uppercase;margin-bottom:16px}
+.hero h1{font-size:clamp(38px,7vw,68px)}
+.hero h1 em{color:var(--orange);font-style:normal}
+.hero p{color:var(--muted);font-size:17px;max-width:560px;margin:20px 0 28px}
+.hero-cta{display:flex;gap:12px;flex-wrap:wrap}
+.creds{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-top:48px}
+@media(max-width:700px){.creds{grid-template-columns:repeat(2,1fr)}}
+.cred{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:16px;text-align:center}
+.cred b{display:block;font-family:'Anton',sans-serif;font-size:19px;color:var(--text);letter-spacing:.5px}
+.cred small{color:var(--muted);font-size:12px}
+
+/* Difference */
+.grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:34px}
+@media(max-width:820px){.grid3{grid-template-columns:1fr}}
+.grid3 .card h3{font-size:17px;margin:12px 0 8px}
+.grid3 .card p{color:var(--muted);font-size:14px}
+.icon{font-size:26px}
+
+/* Programs */
+.mode-toggle{display:flex;gap:8px;margin-top:30px;background:var(--panel-2);border:1px solid var(--line);border-radius:12px;padding:6px;max-width:560px}
+.mode-btn{flex:1;background:none;border:none;border-radius:8px;color:var(--muted);font-family:'Poppins',sans-serif;font-weight:600;font-size:13px;padding:10px 6px;cursor:pointer;transition:.15s;line-height:1.25}
+.mode-btn small{display:block;font-weight:400;font-size:10.5px;opacity:.75}
+.mode-btn.active{background:var(--orange);color:#111}
+.mode-btn.active small{opacity:.9}
+.mode-desc{color:var(--muted);font-size:13.5px;margin-top:14px;max-width:640px}
+.plans-group{display:none}
+.plans-group.active{display:block}
+.plan .permo{font-size:12px;color:var(--muted);margin-top:-2px}
+.plans{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-top:24px}
+.plans.plans-3{grid-template-columns:repeat(3,1fr)}
+@media(max-width:1000px){.plans.plans-3{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:600px){.plans.plans-3{grid-template-columns:1fr}}
+@media(max-width:1000px){.plans{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:600px){.plans{grid-template-columns:1fr}}
+.plan{display:flex;flex-direction:column}
+.plan.featured{border-color:var(--orange);position:relative}
+.plan.featured::before{content:"Start Here — Free";position:absolute;top:-12px;left:50%;transform:translateX(-50%);background:var(--orange);color:#111;font-size:11px;font-weight:700;letter-spacing:1px;text-transform:uppercase;padding:4px 12px;border-radius:99px;white-space:nowrap}
+.plan h3{font-family:'Anton',sans-serif;font-size:20px;letter-spacing:.5px}
+.plan .dur{color:var(--muted);font-size:12.5px;margin:2px 0 12px}
+.plan .price{font-family:'Anton',sans-serif;font-size:34px;color:var(--orange)}
+.plan .spots{font-size:11.5px;color:var(--muted);letter-spacing:.5px;text-transform:uppercase;margin:4px 0 14px}
+.plan ul{list-style:none;font-size:13.5px;color:var(--muted);flex:1;margin-bottom:18px}
+.plan li{padding:7px 0;border-bottom:1px solid var(--line)}
+.plan li::before{content:"✓ ";color:var(--muted);font-weight:700}
+.plan .btn{text-align:center;font-size:14px;padding:12px}
+
+/* Resources */
+.res-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:34px}
+@media(max-width:820px){.res-grid{grid-template-columns:1fr}}
+.res .tag{font-size:11px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:var(--muted)}
+.res h3{font-size:16.5px;margin:10px 0 8px}
+.res p{color:var(--muted);font-size:13.5px;margin-bottom:14px}
+.res a{font-size:13.5px;font-weight:600;text-decoration:none;border-bottom:1px solid var(--line)}
+.res a:hover{color:var(--orange);border-color:var(--orange)}
+
+/* Quiz */
+#quiz .card{max-width:640px;margin:36px auto 0}
+.q-prog{height:5px;background:var(--panel-2);border-radius:99px;margin-bottom:22px;overflow:hidden}
+.q-bar{height:100%;background:var(--orange);width:0%;transition:width .25s;border-radius:99px}
+.q-step{display:none}
+.q-step.active{display:block;animation:fade .25s}
+@keyframes fade{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:none}}
+.q-step h3{font-size:19px;margin-bottom:16px}
+.q-opts{display:grid;gap:10px}
+.q-opt{background:var(--panel-2);border:1px solid var(--line);border-radius:10px;padding:13px 15px;color:var(--text);font-family:'Poppins',sans-serif;font-size:14.5px;text-align:left;cursor:pointer;transition:.15s}
+.q-opt:hover{border-color:var(--orange)}
+.q-nav{margin-top:18px}
+.q-back{background:none;border:none;color:var(--muted);font-size:13.5px;cursor:pointer;font-family:'Poppins',sans-serif}
+.q-result{display:none;text-align:center}
+.q-result.show{display:block;animation:fade .3s}
+.q-result .match{font-family:'Anton',sans-serif;font-size:30px;color:var(--text);margin:8px 0 6px}
+.q-result p{color:var(--muted);font-size:14.5px;margin-bottom:20px}
+.q-result .btn{margin:5px}
+
+/* Results / founding clients */
+.founding{border-color:var(--orange)}
+.founding h3{font-family:'Anton',sans-serif;font-size:22px;margin-bottom:10px}
+.founding p{color:var(--muted);font-size:15px}
+.founding .btn{margin-top:18px}
+#results-feed{margin-top:26px;display:grid;grid-template-columns:repeat(2,1fr);gap:16px}
+@media(max-width:700px){#results-feed{grid-template-columns:1fr}}
+
+/* About */
+.about-grid{display:grid;grid-template-columns:340px 1fr;gap:40px;align-items:start}
+@media(max-width:860px){.about-grid{grid-template-columns:1fr}}
+.about-grid img{border-radius:14px;border:1px solid var(--line)}
+.quote{font-family:'Anton',sans-serif;font-size:20px;color:var(--text);letter-spacing:.5px;margin:14px 0 18px}
+.about p{color:var(--muted);font-size:15px;margin-bottom:14px}
+.about strong{color:var(--text)}
+.badges{display:flex;gap:10px;flex-wrap:wrap;margin-top:18px}
+.badge{background:var(--panel);border:1px solid var(--line);border-radius:99px;padding:8px 16px;font-size:12.5px;font-weight:600}
+.badge b{color:var(--text)}
+
+/* Process */
+.steps{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-top:34px}
+@media(max-width:820px){.steps{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:520px){.steps{grid-template-columns:1fr}}
+.step b{font-family:'Anton',sans-serif;color:#6a717a;font-size:26px;display:block}
+.step h3{font-size:15.5px;margin:8px 0 6px}
+.step p{color:var(--muted);font-size:13px}
+
+/* Contact */
+.contact-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-top:34px}
+@media(max-width:820px){.contact-grid{grid-template-columns:repeat(2,1fr)}}
+.contact-grid .card{text-align:center}
+.contact-grid h3{font-size:14px;margin:10px 0 6px;letter-spacing:.5px}
+.contact-grid a{font-size:14px;text-decoration:none;font-weight:600}
+.contact-cta{display:flex;gap:12px;flex-wrap:wrap;justify-content:center;margin-top:34px}
+
+footer{border-top:1px solid var(--line);padding:36px 0;text-align:center;color:#6a717a;font-size:12.5px}
+footer .f-links{display:flex;gap:20px;justify-content:center;margin:12px 0;flex-wrap:wrap}
+footer a{color:var(--muted);text-decoration:none;font-weight:600}
+footer .privacy{max-width:640px;margin:14px auto 0;font-size:11.5px;line-height:1.55}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}html{scroll-behavior:auto}}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-in">
+    <a class="logo" href="#home">
+      <img src="images/logo.png" alt="Gut Check Coaching logo" onerror="this.style.display='none'">
+      <b>Gut <span>Check</span></b>
+    </a>
+    <button class="menu-btn" aria-label="Open menu" onclick="document.querySelector('.links').classList.toggle('open')">☰</button>
+    <div class="links">
+      <a href="#home">Home</a>
+      <a href="#about">About</a>
+      <a href="#coaching">Programs</a>
+      <a href="#resources">Free Resources</a>
+      <a href="#quiz">Find Your Fit</a>
+      <a href="forms.html">Client Forms</a>
+      <a class="cta" href="#contact">Let's Talk</a>
+    </div>
+  </div>
+</nav>
+
+<!-- HERO -->
+<header class="hero" id="home">
+  <div class="wrap">
+    <p class="loc">Skagit County · Western Washington · Online · In Person</p>
+    <h1>I Help Busy Adults<br><em>Lose Weight &amp;<br>Get Stronger</em></h1>
+    <p>Personalized 1-on-1 hybrid coaching — online or in person — backed by real accountability that builds lasting habits.</p>
+    <div class="hero-cta">
+      <a class="btn" href="#quiz">Find My Program</a>
+      <a class="btn ghost" href="#coaching">See Plans &amp; Pricing</a>
+    </div>
+    <div class="creds">
+      <div class="cred"><b>NASM</b><small>Certified Personal Trainer</small></div>
+      <div class="cred"><b>NCI</b><small>Certified Nutrition Coach</small></div>
+      <div class="cred"><b>100%</b><small>1-on-1 Coaching</small></div>
+      <div class="cred"><b>Hybrid</b><small>Online + In Person</small></div>
+    </div>
+  </div>
+</header>
+
+<!-- DIFFERENCE -->
+<section>
+  <div class="wrap">
+    <p class="eyebrow">The Gut Check Difference</p>
+    <h2>Built Around You.</h2>
+    <p class="sub">1-on-1 hybrid coaching that meets you where you are — your home, your gym, or fully online. No templates, no guesswork.</p>
+    <div class="grid3">
+      <div class="card"><div class="icon">🎯</div><h3>True Accountability</h3><p>Motivation fades. Discipline is built. Weekly check-ins and on-call support keep you consistent even when life gets loud.</p></div>
+      <div class="card"><div class="icon">🥗</div><h3>Macro-Based Nutrition</h3><p>No fad diets. Real food, real numbers. Meal examples with clear do's and don'ts tailored to your lifestyle and goals.</p></div>
+      <div class="card"><div class="icon">💪</div><h3>Smart Programming</h3><p>Exercise built around your ability, health history, and experience — whether you're just starting or leveling up.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- PROGRAMS -->
+<section id="coaching" style="background:var(--panel);border-top:1px solid var(--line);border-bottom:1px solid var(--line)">
+  <div class="wrap">
+    <p class="eyebrow">1-on-1 Hybrid Training — Online or In Person</p>
+    <h2>Programs &amp; Plans</h2>
+    <p class="sub">Every plan includes personalized exercise and nutrition programming built around your life. Pick the commitment that fits where you are right now.</p>
+    <div class="mode-toggle" role="tablist">
+      <button class="mode-btn active" data-mode="online" role="tab" aria-selected="true">Online<small>Coaching only</small></button>
+      <button class="mode-btn" data-mode="hybrid" role="tab" aria-selected="false">Hybrid<small>+1 session/week</small></button>
+      <button class="mode-btn" data-mode="inperson" role="tab" aria-selected="false">In Person<small>2–3 sessions/week</small></button>
+    </div>
+
+    <!-- ONLINE -->
+    <div class="plans-group active" id="mode-online">
+      <p class="mode-desc">Fully personalized programming, macro-based nutrition, weekly check-ins, and direct messaging — delivered online, wherever you are.</p>
+      <div class="plans">
+        <div class="card plan featured">
+          <h3>15-Day Reset</h3><p class="dur">15 Days · Introductory</p>
+          <p class="price">FREE</p><p class="spots">7 Founding Spots Available</p>
+          <ul>
+            <li>Exercise &amp; nutrition programming 2×/week</li>
+            <li>Macro-based meal examples — do's &amp; don'ts</li>
+            <li>Built on your ability, health &amp; experience</li>
+            <li>Weekly check-ins</li>
+          </ul>
+          <a class="btn" href="forms.html#consult">Claim Your Spot</a>
+        </div>
+        <div class="card plan">
+          <h3>30-Day Reset</h3><p class="dur">30 Days · Foundational</p>
+          <p class="price">$200</p><p class="spots">10 Spots Available</p>
+          <ul>
+            <li>Exercise &amp; nutrition programming 2×/week</li>
+            <li>Macro-based meal examples — do's &amp; don'ts</li>
+            <li>Built on your ability, health &amp; experience</li>
+            <li>Weekly check-ins</li>
+          </ul>
+          <a class="btn ghost" href="forms.html">Get Started</a>
+        </div>
+        <div class="card plan">
+          <h3>3-Month Plan</h3><p class="dur">12 Weeks · Accelerated</p>
+          <p class="price">$675</p><p class="permo">$225/month</p><p class="spots">Limited Availability</p>
+          <ul>
+            <li>Exercise &amp; nutrition programming 3×/week</li>
+            <li>Macro-based nutrition coaching</li>
+            <li>Built from your Intake &amp; PAR-Q+</li>
+            <li>Weekly check-ins</li>
+            <li>On-call daily if needed (accountability)</li>
+          </ul>
+          <a class="btn ghost" href="forms.html">Apply Now</a>
+        </div>
+        <div class="card plan">
+          <h3>12-Month Plan</h3><p class="dur">12 Months · Full Transformation</p>
+          <p class="price">$2,900</p><p class="permo">~$240/month</p><p class="spots">Limited Availability</p>
+          <ul>
+            <li>Exercise &amp; nutrition programming 3–4×/week</li>
+            <li>Macro-based nutrition coaching</li>
+            <li>Built from your Intake &amp; PAR-Q+</li>
+            <li>Weekly check-ins</li>
+            <li>On-call daily if needed (accountability)</li>
+          </ul>
+          <a class="btn ghost" href="forms.html">Apply Now</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- HYBRID -->
+    <div class="plans-group" id="mode-hybrid">
+      <p class="mode-desc">Everything in Online Coaching, <strong style="color:var(--text)">plus one 1-on-1 in-person training session every week</strong> — at your home or your gym. Form coached live, program adjusted in real time.</p>
+      <div class="plans plans-3">
+        <div class="card plan featured">
+          <h3>30-Day Kickstart</h3><p class="dur">30 Days · Foundational</p>
+          <p class="price">$425</p><p class="permo">4 in-person sessions included</p><p class="spots">Limited Availability</p>
+          <ul>
+            <li>Full online coaching + weekly check-ins</li>
+            <li>1 in-person session per week</li>
+            <li>Macro-based nutrition coaching</li>
+            <li>Live form &amp; technique coaching</li>
+          </ul>
+          <a class="btn" href="forms.html">Get Started</a>
+        </div>
+        <div class="card plan">
+          <h3>3-Month Plan</h3><p class="dur">12 Weeks · Accelerated</p>
+          <p class="price">$1,300</p><p class="permo">~$435/month · 12 in-person sessions</p><p class="spots">Limited Availability</p>
+          <ul>
+            <li>Full online coaching + programming 3×/week</li>
+            <li>1 in-person session per week</li>
+            <li>Macro-based nutrition coaching</li>
+            <li>On-call daily if needed (accountability)</li>
+          </ul>
+          <a class="btn ghost" href="forms.html">Apply Now</a>
+        </div>
+        <div class="card plan">
+          <h3>12-Month Plan</h3><p class="dur">12 Months · Full Transformation</p>
+          <p class="price">$4,800</p><p class="permo">$400/month · 50+ in-person sessions</p><p class="spots">Limited Availability</p>
+          <ul>
+            <li>Full online coaching + programming 3–4×/week</li>
+            <li>1 in-person session per week</li>
+            <li>Macro-based nutrition coaching</li>
+            <li>On-call daily if needed (accountability)</li>
+          </ul>
+          <a class="btn ghost" href="forms.html">Apply Now</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- IN PERSON -->
+    <div class="plans-group" id="mode-inperson">
+      <p class="mode-desc"><strong style="color:var(--text)">Every training session coached live, 1-on-1, in person</strong> — 2–3 sessions per week at your home or gym, with full nutrition coaching and daily accountability included. Under $60/session — with a nutrition coach built in.</p>
+      <div class="plans plans-3">
+        <div class="card plan featured">
+          <h3>30-Day Kickstart</h3><p class="dur">30 Days · 2 Sessions/Week</p>
+          <p class="price">$550</p><p class="permo">~9 in-person sessions included</p><p class="spots">Limited Availability</p>
+          <ul>
+            <li>Every session coached live, 1-on-1</li>
+            <li>Macro-based nutrition coaching</li>
+            <li>Weekly check-ins</li>
+            <li>Live form &amp; technique coaching</li>
+          </ul>
+          <a class="btn" href="forms.html">Get Started</a>
+        </div>
+        <div class="card plan">
+          <h3>3-Month Plan</h3><p class="dur">12 Weeks · 3 Sessions/Week</p>
+          <p class="price">$2,100</p><p class="permo">$700/month · ~36 sessions</p><p class="spots">Limited Availability</p>
+          <ul>
+            <li>Every session coached live, 1-on-1</li>
+            <li>Macro-based nutrition coaching</li>
+            <li>Weekly check-ins</li>
+            <li>On-call daily if needed (accountability)</li>
+          </ul>
+          <a class="btn ghost" href="forms.html">Apply Now</a>
+        </div>
+        <div class="card plan">
+          <h3>12-Month Plan</h3><p class="dur">12 Months · 3 Sessions/Week</p>
+          <p class="price">$7,200</p><p class="permo">$600/month · 140+ sessions</p><p class="spots">Limited Availability</p>
+          <ul>
+            <li>Every session coached live, 1-on-1</li>
+            <li>Macro-based nutrition coaching</li>
+            <li>Weekly check-ins</li>
+            <li>On-call daily if needed (accountability)</li>
+          </ul>
+          <a class="btn ghost" href="forms.html">Apply Now</a>
+        </div>
+      </div>
+    </div>
+
+    <p class="sub" style="margin-top:26px;text-align:center;max-width:none">All plans are 100% 1-on-1. In-person training available in Sedro-Woolley, Mount Vernon, Burlington, Anacortes &amp; Bellingham — online coaching available everywhere.<br><span style="color:var(--orange);font-weight:600">Founding clients who complete the free 15-Day Reset lock in 20% off Hybrid &amp; In-Person plans — for life.</span></p>
+  </div>
+</section>
+
+<!-- FREE RESOURCES -->
+<section id="resources">
+  <div class="wrap">
+    <p class="eyebrow">No Commitment Required</p>
+    <h2>Free Resources</h2>
+    <p class="sub">Not ready to invest in a program yet? Start here. These are the same principles I coach every client with — free.</p>
+    <div class="res-grid">
+      <div class="card res"><span class="tag">Nutrition</span><h3>🧮 Macro Calculator</h3><p>Calculate your daily protein, carb, and fat targets based on your goal — fat loss, muscle gain, or maintenance.</p><a href="https://www.calculator.net/macro-calculator.html" target="_blank" rel="noopener">Use Free Calculator →</a></div>
+      <div class="card res"><span class="tag">Training</span><h3>📋 Beginner Training Framework</h3><p>A simple 3-day full-body resistance training framework to get you started — no gym required.</p><a href="mailto:thegutcheckcoaching@gmail.com?subject=Send%20me%20the%20Beginner%20Training%20Framework">Email Me the Framework →</a></div>
+      <div class="card res"><span class="tag">Mindset</span><h3>🧠 Discipline Over Motivation</h3><p>Why motivation fails — and how to use neuroplasticity to build habits that actually stick long-term.</p><a href="mailto:thegutcheckcoaching@gmail.com?subject=Send%20me%20the%20Discipline%20Framework">Email Me the Framework →</a></div>
+      <div class="card res"><span class="tag">Nutrition</span><h3>🍽️ Eating for Fat Loss: Do's &amp; Don'ts</h3><p>What actually matters when eating for fat loss — and what most people get completely wrong.</p><a href="mailto:thegutcheckcoaching@gmail.com?subject=Send%20me%20the%20Fat%20Loss%20Guide">Email Me the Guide →</a></div>
+      <div class="card res"><span class="tag">Recovery</span><h3>😴 Sleep &amp; Recovery Basics</h3><p>Most people overlook recovery and wonder why they're not progressing. Here's what you can't skip.</p><a href="mailto:thegutcheckcoaching@gmail.com?subject=Send%20me%20the%20Sleep%20%26%20Recovery%20Guide">Email Me the Guide →</a></div>
+      <div class="card res" style="border-color:var(--orange)"><span class="tag">Ready to Level Up?</span><h3>🚀 Free 15-Day Reset</h3><p>Personalized programming built for you with weekly accountability — 7 founding spots, no cost.</p><a href="forms.html#consult">Claim a Spot →</a></div>
+    </div>
+  </div>
+</section>
+
+<!-- QUIZ -->
+<section id="quiz" style="background:var(--panel);border-top:1px solid var(--line);border-bottom:1px solid var(--line)">
+  <div class="wrap">
+    <p class="eyebrow">Find Your Program</p>
+    <h2 style="text-align:left">Not Sure Where To Start?</h2>
+    <p class="sub">Answer 6 quick questions — I'll match you with the right program and connect you to the client forms.</p>
+    <div class="card">
+      <div class="q-prog"><div class="q-bar" id="qbar"></div></div>
+
+      <div class="q-step active" data-key="goal">
+        <h3>What's your #1 goal?</h3>
+        <div class="q-opts">
+          <button class="q-opt" data-v="lose">Lose weight / body fat</button>
+          <button class="q-opt" data-v="build">Build muscle / get stronger</button>
+          <button class="q-opt" data-v="both">Both — lose fat &amp; build strength</button>
+          <button class="q-opt" data-v="general">General fitness &amp; energy</button>
+        </div>
+      </div>
+
+      <div class="q-step" data-key="exp">
+        <h3>How much training experience do you have?</h3>
+        <div class="q-opts">
+          <button class="q-opt" data-v="0">Beginner — never trained consistently</button>
+          <button class="q-opt" data-v="1">Some experience — inconsistent</button>
+          <button class="q-opt" data-v="2">Intermediate — 1–2 years consistent</button>
+          <button class="q-opt" data-v="3">Advanced — 3+ years structured</button>
+        </div>
+      </div>
+
+      <div class="q-step" data-key="days">
+        <h3>How many days per week can you realistically train?</h3>
+        <div class="q-opts">
+          <button class="q-opt" data-v="2">2 days</button>
+          <button class="q-opt" data-v="3">3 days</button>
+          <button class="q-opt" data-v="4">4+ days</button>
+        </div>
+      </div>
+
+      <div class="q-step" data-key="change">
+        <h3>How much do you want to change?</h3>
+        <div class="q-opts">
+          <button class="q-opt" data-v="jumpstart">A jump-start — build momentum first</button>
+          <button class="q-opt" data-v="moderate">A real transformation over a few months</button>
+          <button class="q-opt" data-v="full">A complete lifestyle overhaul</button>
+        </div>
+      </div>
+
+      <div class="q-step" data-key="format">
+        <h3>How do you want to train?</h3>
+        <div class="q-opts">
+          <button class="q-opt" data-v="online">Online only</button>
+          <button class="q-opt" data-v="person">In person — home or gym</button>
+          <button class="q-opt" data-v="either">Flexible — either works</button>
+        </div>
+      </div>
+
+      <div class="q-step" data-key="start">
+        <h3>When do you want to start?</h3>
+        <div class="q-opts">
+          <button class="q-opt" data-v="now">This week — I'm ready</button>
+          <button class="q-opt" data-v="soon">Within a couple of weeks</button>
+          <button class="q-opt" data-v="explore">Just exploring for now</button>
+        </div>
+      </div>
+
+      <div class="q-nav"><button class="q-back" id="qback" hidden>← Back</button></div>
+
+      <div class="q-result" id="qresult">
+        <p class="eyebrow">✓ Your Match</p>
+        <p class="match" id="qmatch"></p>
+        <p id="qwhy"></p>
+        <a class="btn" href="forms.html">📋 Fill Out Client Forms</a>
+        <a class="btn ghost" href="https://calendar.app.google/87Jx2bv3XxwHPDdG7" target="_blank" rel="noopener">📅 Book a Free Call</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- RESULTS — honest founding-client version -->
+<section id="results">
+  <div class="wrap">
+    <p class="eyebrow">Client Results</p>
+    <h2>Real People. Real Change.<br>Documented As It Happens.</h2>
+    <p class="sub">I'm not going to show you stock photos or borrowed testimonials. Gut Check is built on honest communication — so results get posted here as my founding clients earn them, with their permission, check-in by check-in.</p>
+    <div class="card founding" style="margin-top:34px">
+      <h3>Become a Founding Client</h3>
+      <p>The first 7 people through the <strong style="color:var(--text)">free 15-Day Reset</strong> get fully personalized programming, weekly accountability, and my full attention — in exchange for honest feedback and (if you're willing) permission to share your progress here. Your results become the proof. That's the deal.</p>
+      <a class="btn" href="forms.html#consult">Claim a Founding Spot</a>
+      <a class="btn ghost" href="https://www.instagram.com/the_gut_check" target="_blank" rel="noopener" style="margin-left:8px">Follow Progress on Instagram</a>
+    </div>
+    <!-- As real client results come in, add cards here:
+    <div id="results-feed">
+      <div class="card"><p class="eyebrow">Week 3 Check-in</p><p>"..." — First name, program</p></div>
+    </div>
+    -->
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section id="about" style="background:var(--panel);border-top:1px solid var(--line);border-bottom:1px solid var(--line)">
+  <div class="wrap about">
+    <p class="eyebrow">Coach Antonio</p>
+    <h2>About Me</h2>
+    <div class="about-grid" style="margin-top:26px">
+      <img src="images/coach-antonio.jpg" alt="Coach Antonio, NASM certified personal trainer and NCI nutrition coach, Gut Check Coaching" onerror="this.style.display='none'">
+      <div>
+        <p class="quote">"Motivation Is Fleeting Like Emotions. Discipline Is Key."</p>
+        <p>I've been athletic my whole life — endurance and cardio first, then a full shift into resistance training, where I found what I actually wanted to spend my life doing: understanding what the body is truly capable of, and helping other people find out for themselves.</p>
+        <p>I'm certified through <strong>NCI as a Nutrition Coach</strong> and through <strong>NASM as a Personal Trainer</strong>. I bring both disciplines together because neither works as well without the other.</p>
+        <p>Life gets busy and time moves fast when you're grinding through your daily list. What I've learned is that motivation isn't a reliable foundation — it comes and goes like any emotion. The real shift happens when you stop relying on how you feel and start building structure through discipline and habit. Neuroplasticity is real: repeat the right behaviors consistently and they stop feeling like effort and start feeling like <em>you</em>. That's the goal.</p>
+        <p>Every program I write is built from scratch — your ability, your schedule, your health history, your goals. No templates, no copy-paste. That's what 1-on-1 actually means.</p>
+        <div class="badges">
+          <span class="badge"><b>NASM</b> Certified PT</span>
+          <span class="badge"><b>NCI</b> Nutrition Coach</span>
+          <span class="badge"><b>Local</b> Skagit County, WA</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PROCESS -->
+<section>
+  <div class="wrap">
+    <p class="eyebrow">How It Works</p>
+    <h2>The Process</h2>
+    <p class="sub">From first contact to your first session — here's exactly what to expect.</p>
+    <div class="steps">
+      <div class="card step"><b>01</b><h3>Take the Quiz</h3><p>6 questions to understand your goals, lifestyle, and experience before we ever connect.</p></div>
+      <div class="card step"><b>02</b><h3>Fill Out Your Forms</h3><p>Complete the Consultation, Intake, and PAR-Q+ so your program is built safely and specifically for you.</p></div>
+      <div class="card step"><b>03</b><h3>Connect With Antonio</h3><p>Book a free call or send a direct message — we'll talk through your program and next steps.</p></div>
+      <div class="card step"><b>04</b><h3>Start Training</h3><p>Your personalized program is built and we get to work — online, in person, or both.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact" style="background:var(--panel);border-top:1px solid var(--line)">
+  <div class="wrap">
+    <p class="eyebrow">Let's Talk</p>
+    <h2>Ready To Go?</h2>
+    <p class="sub">Reach out directly — I respond personally within 24 hours. No automated replies, no sales team.</p>
+    <div class="contact-grid">
+      <div class="card"><div class="icon">📞</div><h3>Call or Text</h3><a href="tel:+13606106877">(360) 610-6877</a></div>
+      <div class="card"><div class="icon">✉️</div><h3>Email</h3><a href="mailto:thegutcheckcoaching@gmail.com">thegutcheckcoaching@gmail.com</a></div>
+      <div class="card"><div class="icon">📅</div><h3>Book a Call</h3><a href="https://calendar.app.google/87Jx2bv3XxwHPDdG7" target="_blank" rel="noopener">Book a Free Intro Call</a></div>
+      <div class="card"><div class="icon">📸</div><h3>Instagram</h3><a href="https://www.instagram.com/the_gut_check" target="_blank" rel="noopener">@the_gut_check</a></div>
+    </div>
+    <div class="contact-cta">
+      <a class="btn" href="#quiz">Take the Quiz First</a>
+      <a class="btn ghost" href="forms.html">Fill Out Client Forms</a>
+    </div>
+    <p style="text-align:center;color:var(--muted);font-size:13px;margin-top:26px">📍 Sedro-Woolley, WA · Serving Skagit &amp; Whatcom County · Online &amp; Travel Available</p>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <b style="font-family:'Anton',sans-serif;font-size:16px;letter-spacing:.5px">GUT <span style="color:var(--orange)">CHECK</span> COACHING</b>
+    <div class="f-links">
+      <a href="#home">Home</a><a href="#coaching">Programs</a><a href="#resources">Free Resources</a><a href="forms.html">Client Forms</a><a href="https://www.instagram.com/the_gut_check" target="_blank" rel="noopener">Instagram</a>
+    </div>
+    <p>© 2026 Gut Check Coaching · Coach Antonio · Sedro-Woolley, Washington</p>
+    <p class="privacy"><strong>Your privacy:</strong> Information submitted through client forms — including health screening responses — is sent directly and privately to Coach Antonio, used only to build your program, and never sold or shared with third parties. Coaching is not medical advice; consult your physician before beginning a new exercise program.</p>
+  </div>
+</footer>
+
+<script>
+/* Quiz */
+const steps=[...document.querySelectorAll('.q-step')];
+const bar=document.getElementById('qbar'), back=document.getElementById('qback');
+const answers={}; let idx=0;
+function render(){
+  steps.forEach((s,i)=>s.classList.toggle('active',i===idx));
+  bar.style.width=(idx/steps.length*100)+'%';
+  back.hidden=idx===0;
+}
+steps.forEach((step,i)=>{
+  step.querySelectorAll('.q-opt').forEach(btn=>{
+    btn.addEventListener('click',()=>{
+      answers[step.dataset.key]=btn.dataset.v;
+      if(i<steps.length-1){idx=i+1;render();}
+      else finish();
+    });
+  });
+});
+back.addEventListener('click',()=>{if(idx>0){idx--;render();}});
+function finish(){
+  steps.forEach(s=>s.classList.remove('active'));
+  bar.style.width='100%';back.hidden=true;
+  let match,why;
+  const exp=+answers.exp, exploring=answers.start==='explore';
+  if(exploring||answers.change==='jumpstart'||(exp===0&&answers.days==='2')){
+    match='Free 15-Day Reset';
+    why="Momentum first. Two weeks of personalized programming and real accountability — at zero cost — is the smartest way to prove to yourself this works.";
+  }else if(answers.change==='full'){
+    match='12-Month Plan';
+    why="A full lifestyle overhaul takes time to make permanent. Twelve months of programming, nutrition coaching, and on-call accountability builds habits that don't unravel.";
+  }else if(answers.change==='moderate'&&(exp>=1||answers.days!=='2')){
+    match='3-Month Plan';
+    why="Twelve weeks is the sweet spot for a visible transformation — enough time for real body composition change with 3×/week programming and daily accountability when you need it.";
+  }else{
+    match='30-Day Reset';
+    why="A structured month builds your foundation — training, macros, and check-ins — so you know exactly what you're doing and why.";
+  }
+  document.getElementById('qmatch').textContent=match;
+  document.getElementById('qwhy').textContent=why;
+  document.getElementById('qresult').classList.add('show');
+}
+/* Pricing mode toggle */
+document.querySelectorAll('.mode-btn').forEach(btn=>{
+  btn.addEventListener('click',()=>{
+    document.querySelectorAll('.mode-btn').forEach(b=>{b.classList.remove('active');b.setAttribute('aria-selected','false')});
+    btn.classList.add('active');btn.setAttribute('aria-selected','true');
+    document.querySelectorAll('.plans-group').forEach(g=>g.classList.remove('active'));
+    document.getElementById('mode-'+btn.dataset.mode).classList.add('active');
+  });
+});
+/* Close mobile menu after tapping a link */
+document.querySelectorAll('.links a').forEach(a=>a.addEventListener('click',()=>document.querySelector('.links').classList.remove('open')));
+</script>
+</body>
+</html>
